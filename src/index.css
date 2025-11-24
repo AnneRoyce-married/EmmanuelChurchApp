@@ -1,0 +1,103 @@
+/* src/index.css — brand + shadcn-friendly Tailwind v4 theme */
+
+@import "tailwindcss";
+
+/* optional plugins you used (keep if installed) */
+@plugin "tailwindcss-animate";
+@import "tw-animate-css";
+
+/* small utilities */
+.bg-gold-gradient {
+  background: linear-gradient(90deg, rgba(212,175,55,1) 0%, rgba(255,229,153,1) 100%);
+}
+.hero-overlay {
+  background: linear-gradient(180deg, rgba(30,58,138,0.85), rgba(255,255,255,0.0));
+}
+.focus-ring:focus {
+  outline: 3px solid rgba(59,130,246,0.35);
+  outline-offset: 2px;
+}
+
+/* Brand colors (Deep Royal Blue + Classic Gold + White) */
+:root{
+  /* primary brand (deep royal blue) */
+  --brand-primary: #1E40AF;     /* deep royal blue */
+  --brand-primary-400: #3B82F6; /* light variant */
+  --brand-primary-700: #1E3A8A; /* dark variant */
+
+  /* gold */
+  --brand-gold: #D4AF37;
+
+  /* neutrals */
+  --brand-white: #FFFFFF;
+  --brand-text: #1E293B;
+
+  /* design tokens */
+  --radius: 0.625rem;
+}
+
+/* Merge brand tokens into shadcn / tailwind @theme variables so Tailwind v4 sees them */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* background / foreground (use neutral oklch fallbacks already present in your project) */
+  --color-background: var(--brand-white);
+  --color-foreground: var(--brand-text);
+
+  /* primary / accent mapped to brand */
+  --color-primary: var(--brand-primary);
+  --color-primary-foreground: var(--brand-white);
+  --color-primary-400: var(--brand-primary-400);
+  --color-primary-700: var(--brand-primary-700);
+
+  --color-accent: var(--brand-gold);
+  --color-accent-foreground: var(--brand-primary-700);
+
+  /* smaller aliases commonly used by shadcn presets */
+  --color-card: var(--color-background);
+  --color-card-foreground: var(--color-foreground);
+  --color-border: oklch(0.92 0 0);
+  --color-ring: oklch(0.708 0 0);
+}
+
+/* keep your dark mode tokens but map brand when appropriate */
+.dark {
+  /* invert background/foreground for dark theme */
+  --color-background: oklch(0.145 0 0);
+  --color-foreground: oklch(0.985 0 0);
+
+  /* keep brand primary visible (use a lighter primary for dark) */
+  --color-primary: var(--brand-primary-400);
+  --color-primary-foreground: var(--brand-white);
+
+  --color-accent: var(--brand-gold);
+  --color-accent-foreground: var(--brand-primary-700);
+}
+
+/* convenience utility classes (so you can use these directly) */
+.bg-primary { background-color: var(--color-primary); }
+.text-primary { color: var(--color-primary); }
+.bg-primary-400 { background-color: var(--color-primary-400); }
+.bg-primary-700 { background-color: var(--color-primary-700); }
+
+.bg-gold { background-color: var(--color-accent); }
+.text-gold { color: var(--color-accent); }
+.text-gold-foreground { color: var(--color-accent-foreground); }
+
+/* component test box (temporary; remove when satisfied) */
+.test-box {
+  @apply bg-primary text-white p-8 text-2xl rounded-md;
+}
+
+/* base layer to ensure body uses our theme tokens */
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial);
+  }
+}
