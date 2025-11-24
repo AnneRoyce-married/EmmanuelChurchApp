@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "homepage": "https://AnneRoyce-married.github.io/main",
+ "homepage": "https://AnneRoyce-married.github.io/EmmanuelChurchApp",
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",
