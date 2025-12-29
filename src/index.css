@@ -21,7 +21,7 @@
 /* Brand colors (Deep Royal Blue + Classic Gold + White) */
 :root{
   /* primary brand (deep royal blue) */
-  --brand-primary: #1E40AF;     /* deep royal blue */
+  --brand-primary: #2C3552 ;     /* deep royal blue */
   --brand-primary-400: #3B82F6; /* light variant */
   --brand-primary-700: #1E3A8A; /* dark variant */
 

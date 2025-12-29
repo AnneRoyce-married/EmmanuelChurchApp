@@ -1,13 +1,36 @@
 import React from 'react'
 
 const beliefs = [
-  {title: 'The Bible', body: 'We believe the Bible is the inspired, infallible, and authoritative Word of God (2 Timothy 3:16).'},
-  {title: 'God', body: 'We believe in one true God, eternally existing as Father, Son, and Holy Spirit (Matthew 28:19).'},
-  {title: 'Jesus Christ', body: 'We believe Jesus Christ is fully God and fully man; He died for our sins and rose again for our justification (1 Corinthians 15:3–4).'},
-  {title: 'Salvation', body: 'We believe salvation is by grace through faith in Christ alone (Ephesians 2:8–9).'},
-  {title: 'The Church', body: 'We believe the local church gathers to worship, to hear God’s Word, and to serve one another (Acts 2:42).'},
-  {title: 'The Return of Christ', body: 'We believe Jesus will return bodily and visibly to judge the living and the dead (Acts 1:11).'},
+  {
+    title: 'The Bible',
+    body: 'The Bible is the inspired, infallible, and authoritative Word of God (2 Timothy 3:16).',
+  },
+  {
+    title: 'God',
+    body: 'There is one true God, eternally existing as Father, Son, and Holy Spirit (Matthew 28:19).',
+  },
+  {
+    title: 'Jesus Christ',
+    body: 'Jesus Christ is fully God and fully man; He died for our sins and rose again for our justification (1 Corinthians 15:3–4).',
+  },
+  {
+    title: 'Salvation',
+    body: 'Salvation is by grace through faith in Christ alone (Ephesians 2:8–9).',
+  },
+  {
+    title: 'The Church',
+    body: 'The local church gathers to worship, to hear God’s Word, and to serve one another (Acts 2:42).',
+  },
+  {
+    title: 'Marriage',
+    body: 'Marriage is ordained by God and is a lifelong covenant between one man and one woman. Sexual relationships are to be expressed within marriage, as established by God at creation, and marriage is to be honoured by all (Genesis 2:24; Matthew 19:4–6; Hebrews 13:4).',
+  },
+  {
+    title: 'The Return of Christ',
+    body: 'Jesus will return bodily and visibly to judge the living and the dead (Acts 1:11).',
+  },
 ]
+
 
 export default function Beliefs(){
   return (
